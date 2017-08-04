@@ -1,0 +1,451 @@
+package game;
+
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.Random;
+
+public class main_character extends Applet implements KeyListener{
+	
+	Random rand = new Random();
+	
+	int total_height = 1500, total_width = 800;
+	int char_x = 150, char_y = 200;
+	int flag = 0;
+	int max_top = 100, max_bot = 700;
+	int top_obj_y = 100, top_obj_x_1 = 200, top_obj_x_2 = 350, top_obj_x_3 = 500, top_obj_x_4 = 570, top_obj_x_5 = 650, top_obj_x_6 = 800, top_obj_x_7 = 1000, top_obj_x_8 = 1100, top_obj_x_9 = 1225, top_obj_x_10 = 1400;
+	int top_obj_y_1 = 0, top_obj_y_2 = 0 ,top_obj_y_3 = 0, top_obj_y_4 = 0, top_obj_y_5 = 0, top_obj_y_6 = 0, top_obj_y_7 = 0, top_obj_y_8 = 0, top_obj_y_9 = 0, top_obj_y_10 = 0;
+	
+	int bot_obj_x_1 = 80, bot_obj_x_2 = 160, bot_obj_x_3 = 370, bot_obj_x_4 = 480, bot_obj_x_5 = 600, bot_obj_x_6 = 657, bot_obj_x_7 = 825, bot_obj_x_8 = 995, bot_obj_x_9 = 1225, bot_obj_x_10 = 1400;
+	int bot_obj_y_1 = 700, bot_obj_y_2 = 700, bot_obj_y_3 = 700, bot_obj_y_4 = 700, bot_obj_y_5 = 700, bot_obj_y_6 = 700, bot_obj_y_7 = 700, bot_obj_y_8 = 700, bot_obj_y_9 = 700, bot_obj_y_10 = 700;
+			
+	int fore_flag = 0;
+	int bot_obj_y = 0;
+	
+	int top_char_x_end = 187, top_char_y_end = 200;
+	int bot_char_x_end = 175, bot_char_y_end = 300;
+	
+	public void init() {
+		
+		this.setSize(new Dimension(total_height,total_width));
+		
+		addKeyListener(this);
+		requestFocus();
+	}
+	
+	public void paint(Graphics g) {
+		
+		background(g);
+		foreground(g);
+		character(g);
+		check(g);
+		foreground_update(g);
+		hit(g);
+	}
+	
+	public void hit(Graphics g) {
+		
+		//System.out.println(char_x);
+		//System.out.println(top_obj_x_1);
+		//System.out.println(top_char_x_end);
+		//System.out.println(top_obj_y_1);
+		//System.out.println(char_y);
+		//System.out.println("-------------------");
+
+		if(top_obj_x_1 > char_x && top_obj_x_1 < top_char_x_end && top_obj_y + top_obj_y_1 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_2 > char_x && top_obj_x_2 < top_char_x_end && top_obj_y + top_obj_y_2 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_3 > char_x && top_obj_x_3 < top_char_x_end && top_obj_y + top_obj_y_3 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_4 > char_x && top_obj_x_4 < top_char_x_end && top_obj_y + top_obj_y_4 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_5 > char_x && top_obj_x_5 < top_char_x_end && top_obj_y + top_obj_y_5 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_6 > char_x && top_obj_x_6 < top_char_x_end && top_obj_y + top_obj_y_6 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_7 > char_x && top_obj_x_7 < top_char_x_end && top_obj_y + top_obj_y_7 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_8 > char_x && top_obj_x_8 < top_char_x_end && top_obj_y + top_obj_y_8 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_9 > char_x && top_obj_x_9 < top_char_x_end && top_obj_y + top_obj_y_9 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(top_obj_x_10 > char_x && top_obj_x_10 < top_char_x_end && top_obj_y +top_obj_y_10 > char_y ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(5000);	} 
+			catch (InterruptedException e) {	}
+		}
+		
+		
+		
+		if(bot_obj_x_1 > char_x && bot_obj_x_1 < bot_char_x_end && bot_obj_y_1 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(bot_obj_x_2 > char_x && bot_obj_x_2 < bot_char_x_end && bot_obj_y_2 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(bot_obj_x_3 > char_x && bot_obj_x_3 < bot_char_x_end && bot_obj_y_3 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(bot_obj_x_4 > char_x && bot_obj_x_4 < bot_char_x_end && bot_obj_y_4 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(bot_obj_x_5 > char_x && bot_obj_x_5 < bot_char_x_end && bot_obj_y_5 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(bot_obj_x_6 > char_x && bot_obj_x_6 < bot_char_x_end && bot_obj_y_6 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(bot_obj_x_7 > char_x && bot_obj_x_7 < bot_char_x_end && bot_obj_y_7 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+		if(bot_obj_x_8 > char_x && bot_obj_x_8 < bot_char_x_end && bot_obj_y_8 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}if(bot_obj_x_9 > char_x && bot_obj_x_9 < bot_char_x_end && bot_obj_y_9 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}if(bot_obj_x_10 > char_x && bot_obj_x_10 < bot_char_x_end && bot_obj_y_10 + 300 < char_y + 100 ) {
+			g.drawString("YOU HIT THE WALL !! GAME OVER !! RESTART IN 5 SEC.", (total_height/2) - 20, (total_width/2));
+			try { Thread.sleep(500);	} 
+			catch (InterruptedException e) {	}
+		}
+	}
+	
+	public void foreground_update(Graphics g) {
+		top_obj_x_1 = top_obj_x_1 - 4;
+		top_obj_x_2 = top_obj_x_2 - 4;
+		top_obj_x_3 = top_obj_x_3 - 4;
+		top_obj_x_4 = top_obj_x_4 - 4;
+		top_obj_x_5 = top_obj_x_5 - 4;
+		top_obj_x_6 = top_obj_x_6 - 4;
+		top_obj_x_7 = top_obj_x_7 - 4;
+		top_obj_x_8 = top_obj_x_8 - 4;
+		top_obj_x_9 = top_obj_x_9 - 4;
+		top_obj_x_10 = top_obj_x_10 - 4;
+		
+		bot_obj_x_1 = bot_obj_x_1 - 4;
+		bot_obj_x_2 = bot_obj_x_2 - 4;
+		bot_obj_x_3 = bot_obj_x_3 - 4;
+		bot_obj_x_4 = bot_obj_x_4 - 4;
+		bot_obj_x_5 = bot_obj_x_5 - 4;
+		bot_obj_x_6 = bot_obj_x_6 - 4;
+		bot_obj_x_7 = bot_obj_x_7 - 4;
+		bot_obj_x_8 = bot_obj_x_8 - 4;
+		bot_obj_x_9 = bot_obj_x_9 - 4;
+		bot_obj_x_10 = bot_obj_x_10 - 4;
+	}
+	
+	public void foreground(Graphics g) {
+		
+		
+			g.fillRect(top_obj_x_1, top_obj_y, 50, top_obj_y_1);
+			g.fillRect(top_obj_x_2, top_obj_y, 50, top_obj_y_2);
+			g.fillRect(top_obj_x_3, top_obj_y, 50, top_obj_y_3);
+			g.fillRect(top_obj_x_4, top_obj_y, 50, top_obj_y_4);
+			g.fillRect(top_obj_x_5, top_obj_y, 50, top_obj_y_5);
+			g.fillRect(top_obj_x_6, top_obj_y, 50, top_obj_y_6);
+			g.fillRect(top_obj_x_7, top_obj_y, 50, top_obj_y_7);
+			g.fillRect(top_obj_x_8, top_obj_y, 50, top_obj_y_8);
+			g.fillRect(top_obj_x_9, top_obj_y, 50, top_obj_y_9);
+			g.fillRect(top_obj_x_10, top_obj_y, 50, top_obj_y_10);
+			
+			g.fillRect(bot_obj_x_1, bot_obj_y_1 + 300, 50, 700 - bot_obj_y_1 - 300);
+			g.fillRect(bot_obj_x_2, bot_obj_y_2 + 300, 50, 700 - bot_obj_y_2 - 300);
+			g.fillRect(bot_obj_x_3, bot_obj_y_3 + 300, 50, 700 - bot_obj_y_3 - 300);
+			g.fillRect(bot_obj_x_4, bot_obj_y_4 + 300, 50, 700 - bot_obj_y_4 - 300);
+			g.fillRect(bot_obj_x_5, bot_obj_y_5 + 300, 50, 700 - bot_obj_y_5 - 300);
+			g.fillRect(bot_obj_x_6, bot_obj_y_6 + 300, 50, 700 - bot_obj_y_6 - 300);
+			g.fillRect(bot_obj_x_7, bot_obj_y_7 + 300, 50, 700 - bot_obj_y_7 - 300);
+			g.fillRect(bot_obj_x_8, bot_obj_y_8 + 300, 50, 700 - bot_obj_y_8 - 300);
+			g.fillRect(bot_obj_x_9, bot_obj_y_9 + 300, 50, 700 - bot_obj_y_9 - 300);
+			g.fillRect(bot_obj_x_10, bot_obj_y_10 + 300, 50, 700 - bot_obj_y_10 - 300);
+			
+			repaint();
+		
+		if(top_obj_x_1 < 0) {
+			top_obj_x_1 = 1500;
+			top_obj_y_1 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_2 < 0) {
+			top_obj_x_2 = 1500;
+			top_obj_y_2 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_3 < 0) {
+			top_obj_x_3 = 1500;
+			top_obj_y_3 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_4 < 0) {
+			top_obj_x_4 = 1500;
+			top_obj_y_4 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_5 < 0) {
+			top_obj_x_5 = 1500;
+			top_obj_y_5 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_6 < 0) {
+			top_obj_x_6 = 1500;
+			top_obj_y_6 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_7 < 0) {
+			top_obj_x_7 = 1500;
+			top_obj_y_7 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_8 < 0) {
+			top_obj_x_8 = 1500;
+			top_obj_y_8 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_9 < 0) {
+			top_obj_x_9 = 1500;
+			top_obj_y_9 = rand.nextInt(210) + 20;
+		}
+		if(top_obj_x_10 < 0) {
+			top_obj_x_10 = 1500;
+			top_obj_y_10 = rand.nextInt(210) + 20;
+		}
+		
+		
+		if(bot_obj_x_1 < 0) {
+			bot_obj_x_1 = 1500;
+			bot_obj_y_1 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_2 < 0) {
+			bot_obj_x_2 = 1500;
+			bot_obj_y_2 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_3 < 0) {
+			bot_obj_x_3 = 1500;
+			bot_obj_y_3 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_4 < 0) {
+			bot_obj_x_4 = 1500;
+			bot_obj_y_4 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_5 < 0) {
+			bot_obj_x_5 = 1500;
+			bot_obj_y_5 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_6 < 0) {
+			bot_obj_x_6 = 1500;
+			bot_obj_y_6 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_7 < 0) {
+			bot_obj_x_7 = 1500;
+			bot_obj_y_7 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_8 < 0) {
+			bot_obj_x_8 = 1500;
+			bot_obj_y_8 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_9 < 0) {
+			bot_obj_x_9 = 1500;
+			bot_obj_y_9 = rand.nextInt(500) + 100;
+		}
+		if(bot_obj_x_10 < 0) {
+			bot_obj_x_10 = 1500;
+			bot_obj_y_10 = rand.nextInt(500) + 100;
+		}
+	}
+	
+	public void check(Graphics g) {
+		g.setColor(Color.BLACK);
+		//System.out.println(char_y);
+		if(char_y < 100 || char_y > 700) {
+			g.drawString("GAME OVER", (total_height/2) - 20, (total_width/2));
+		}
+	}
+	
+	public void background(Graphics g) {
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 80, total_height, 20);
+		g.setColor(Color.YELLOW);
+		g.fillRect(0, 100, total_height, max_bot - max_top);
+		g.setColor(Color.BLACK);
+		g.fillRect(0, 700, total_height, 20);
+	}
+	
+	public void character(Graphics g) {
+		g.setColor(Color.BLACK);
+		character_stage_1(g);
+		
+		try { Thread.sleep(3);	} 
+		catch (InterruptedException e) {	}
+		
+		character_stage_2(g);
+		
+		try { Thread.sleep(3);	} 
+		catch (InterruptedException e) {	}
+		
+		character_stage_3(g);
+		
+		try { Thread.sleep(3);	} 
+		catch (InterruptedException e) {	}
+		
+		character_stage_4(g);
+		
+		try { Thread.sleep(3);	} 
+		catch (InterruptedException e) {	}
+		
+		character_stage_5(g);
+		
+		try { Thread.sleep(3);	} 
+		catch (InterruptedException e) {	}
+	}
+	
+	public void character_stage_1(Graphics g) {
+		
+		if(char_y > 100 && char_y < 600) {
+			g.fillRect(char_x, char_y, 37, 30);
+			g.fillRect(char_x - 10, char_y + 30, 30, 40);
+			g.fillRect(char_x, char_y + 70, 10, 30);
+			g.fillRect(char_x + 15, char_y + 70, 10, 30);
+			repaint();
+		}
+		else {
+			g.setColor(Color.BLACK);
+			g.drawString("GAME OVER", 400, 500);
+		}
+	}
+	
+	public void character_stage_2(Graphics g) {
+		if(char_y > 100 && char_y < 600) {
+			g.fillRect(char_x, char_y, 37, 30);
+			g.fillRect(char_x - 10, char_y + 30, 30, 40);
+			g.fillRect(char_x - 15, char_y + 70, 10, 30);
+			g.fillRect(char_x + 0, char_y + 70, 10, 30);
+			repaint();
+		}
+		else {
+			g.setColor(Color.BLACK);
+			g.drawString("GAME OVER", 400, 500);
+		}
+	}
+	
+	public void character_stage_3(Graphics g) {
+		if(char_y > 100 && char_y < 600) {
+			g.fillRect(char_x, char_y, 37, 30);
+			g.fillRect(char_x - 10, char_y + 30, 30, 40);
+			g.fillRect(char_x - 10, char_y + 70, 10, 30);
+			g.fillRect(char_x + 5, char_y + 70, 10, 30);
+			repaint();
+		}
+		else {
+			g.setColor(Color.BLACK);
+			g.drawString("GAME OVER", 400, 500);
+		}
+	}
+	
+	public void character_stage_4(Graphics g) {
+		if(char_y > 100 && char_y < 600) {
+			g.fillRect(char_x, char_y, 37, 30);
+			g.fillRect(char_x - 10, char_y + 30, 30, 40);
+			g.fillRect(char_x - 15, char_y + 70, 10, 30);
+			g.fillRect(char_x + 10, char_y + 70, 10, 30);
+			repaint();
+		}
+		else {
+			g.setColor(Color.BLACK);
+			g.drawString("GAME OVER", 400, 500);
+		}
+	}
+	
+	public void character_stage_5(Graphics g) {
+		if(char_y > 100 && char_y < 600) {
+			g.fillRect(char_x, char_y, 37, 30);
+			g.fillRect(char_x - 10, char_y + 30, 30, 40);
+			g.fillRect(char_x - 20, char_y + 70, 10, 30);
+			g.fillRect(char_x + 15, char_y + 70, 10, 30);
+			repaint();
+		}
+		else {
+			g.setColor(Color.BLACK);
+			g.drawString("GAME OVER", 400, 500);
+		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent k) {
+		// TODO Auto-generated method stub
+		int key=k.getKeyCode();
+		switch(key) 
+		{
+			case KeyEvent.VK_UP:	
+                char_y = char_y - 20;
+                bot_char_y_end = bot_char_y_end - 20;
+                top_char_y_end = top_char_y_end - 20;
+                break;
+                
+			case KeyEvent.VK_DOWN:	
+                char_y = char_y + 20;
+                bot_char_y_end = bot_char_y_end + 20;
+                top_char_y_end = top_char_y_end + 20;
+                break;
+			case KeyEvent.VK_RIGHT:	
+                char_x = char_x + 20;
+                bot_char_x_end = bot_char_x_end + 20;
+                top_char_x_end = top_char_x_end + 20;
+                break;
+			case KeyEvent.VK_LEFT:	
+                char_x = char_x - 20;
+                bot_char_x_end = bot_char_x_end - 20;
+                top_char_x_end = top_char_x_end - 20;
+                break;
+		}
+		repaint();
+	}
+
+	@Override
+	public void keyReleased(KeyEvent k) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+}
